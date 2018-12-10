@@ -62,9 +62,14 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-
+#user authentication
 gem 'devise'
+
+#design
 gem 'bootstrap', '~> 4.1.3'
 gem 'mini_racer'
 gem 'jquery-rails'
+
+
+#environment variables (security)
 gem "figaro"
