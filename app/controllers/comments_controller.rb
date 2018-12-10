@@ -35,6 +35,8 @@ class CommentsController < ApplicationController
     @comment.save
     
 
+    CommentMailer.comment_created(current_user, @post.user, @comment.body).deliver
+
     redirect_to post_path(@post)
 
     

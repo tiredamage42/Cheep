@@ -7,7 +7,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    #@posts = Post.all
+    @posts = Post.search(params[:search])
   end
 
   # GET /posts/1
@@ -35,7 +36,8 @@ class PostsController < ApplicationController
       if @post.save
 
         #if post is created mail poster
-        PostMailer.post_created(@user).deliver_now
+        #when subscribed only
+        #PostMailer.post_created(@user).deliver
 
 
         format.html { redirect_to @post, notice: 'Post was successfully created.' }

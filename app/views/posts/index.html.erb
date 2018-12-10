@@ -2,6 +2,16 @@
 
 <h1>Posts</h1>
 
+
+<!--puts seach input into posts path url-->
+<%= form_tag posts_path, method: 'get' do %>
+
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag "Search" %>
+
+<% end %>
+
+
 <table>
   <thead>
     <tr>
