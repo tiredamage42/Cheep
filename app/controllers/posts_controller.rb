@@ -2,7 +2,44 @@ class PostsController < ApplicationController
 
   before_action :authenticate_user!
 
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+
+
+  #upvote_from user
+  def upvote
+    if current_user.voted_down_on? @post
+      @post.undisliked_by current_user
+    end
+    if current_user.voted_up_on? @post
+      @post.unliked_by current_user
+    else
+      @post.liked_by current_user
+    end
+
+
+    #@post.upvote_from current_user
+    redirect_to posts_path
+  end
+  
+  #downvote_from user
+  def downvote
+
+    if current_user.voted_up_on? @post
+      @post.unliked_by current_user
+    end
+    if current_user.voted_down_on? @post
+      @post.undisliked_by current_user
+    else
+      @post.disliked_by current_user
+    end
+
+
+    #@post.downvote_from current_user
+    redirect_to posts_path
+  
+  end
+
+
 
   # GET /posts
   # GET /posts.json

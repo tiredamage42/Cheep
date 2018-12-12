@@ -73,3 +73,6 @@ gem 'jquery-rails'
 
 #environment variables (security)
 gem "figaro"
+
+#like/dislike
+gem 'acts_as_votable', '~> 0.12.0'
