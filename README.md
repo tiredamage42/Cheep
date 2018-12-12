@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+a twitter clone made for educational purposes
+using postgresql database.
 
-Things you may want to cover:
+TO-DO:
 
-* Ruby version
+-~user login and authentication~
+-~basic comments~
+-~likes/dislikes~
+-~basic mailer~
+-~admin panel~
 
-* System dependencies
+-automatic login on registration email confirmation
+-update user info (first last name, username, etc...)
+-admin panel sign in
+-expand comments capabilities (edit, delete, etc...)
+-subscription
+-user avatars
+-current activity
+-blocking
+-events
+-current location
+-app integration
+-upload media with posts (images, audio, video)
+-account options / email notification options
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

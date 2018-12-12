@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  validates_uniqueness_of :user_name, :email
+
   has_many :posts
 
   acts_as_voter

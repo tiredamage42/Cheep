@@ -20,9 +20,10 @@ class Post < ApplicationRecord
             # cached_weighted_average,
             
             
-            all.order(:cached_votes_up => :desc)
-
             
+            all.order(:created_at => :desc)
+
+
         end
     end
 end

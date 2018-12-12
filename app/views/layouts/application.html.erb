@@ -20,12 +20,19 @@
 
 
     <% if user_signed_in? %>
-      <p>Hello, <%= current_user.name %> - <%= link_to "Sign Out", destroy_user_session_path, :method => 'delete' %></p>
+      <p>Hello, <%= current_user.user_name %> - <%= link_to "Sign Out", destroy_user_session_path, :method => 'delete' %></p>
     <% else %>
 
       <%= link_to "Sign In", new_user_session_path %>
       <%= link_to "Register", new_user_registration_path %>
       
+    <% end %>
+
+
+    <!--puts seach input into posts path url-->
+    <%= form_tag posts_path, method: 'get' do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search Posts" %>
     <% end %>
 
 
